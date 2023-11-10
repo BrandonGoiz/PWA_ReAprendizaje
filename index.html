@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptar|Desencriptar</title>
+    <link rel="manifest" href="manifest.json">
+    
+</head>
+
+<body>
+
+    <div id="splash-screen" style="display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; z-index: 9999;">
+        <img src="./img/loading.gif" alt="Loading">
+    </div>
+
+    <header>
+     <img src="./img/logo.png" alt="">
+    </header>
+    <div class="main-cont">
+        <div class="main">
+            <div class="encrypt">
+                <textarea  id="usertxt" class="input" placeholder="Ingrese el texto aquí" type="text"></textarea>
+                <p class="advice">
+                    <img  src="./img/icon.png" alt="advice" >
+                    Solo letras minúsculas y sin acentos</p>
+                <div class="buttons">
+                    <button id="btnEncrypt" class=" btn btn1">
+                        Encriptar
+                    </button>
+                    <button id="btnDecrypt" class=" btn btn2">
+                        Desencriptar
+                    </button>
+                </div>
+            </div>
+            <div class="result">
+                <img id="illus" src="./img/illustracion.png" alt="">
+
+                <div class="msgs">
+                    <div class="msg">
+                        <p class="msg1" id="msg1">Ningún mensaje fue encontrado</p>
+                        <p id="msg2">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                    <div class="result-cont" >
+                        <textarea readonly id="result" class="msg2"></textarea>
+                    </div>
+                </div>
+                <button id="btnCopy" class=" btn btn2 btnCopy">Copiar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const splash = document.getElementById('splash-screen');
+            const app = document.getElementById('app');
+
+            // Ocultar el splash y mostrar la app
+            splash.style.display = 'none';
+            app.style.display = 'block';
+        });
+    </script>
+
+    <script src="./index.js"></script>
+
+
+
+</body>
+
+</html>
